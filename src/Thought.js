@@ -11,12 +11,12 @@ export function Thought(props) {
   useEffect(() => {
   const timeRemaining = thought.expiresAt - Date.now();
   const timeout = setTimeout(() => {
-   props.removeThought(thought.id);
+   removeThought(thought.id);
   }, timeRemaining);
   return () => {
     clearTimeout(timeout);
   };
-}, [thought]);
+}, [thought, removeThought, thought.expiresAt, thought.id]);
 
   return (
     <li className="Thought">
