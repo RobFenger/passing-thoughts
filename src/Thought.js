@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 
 export function Thought(props) {
-  const { thought, removeThought } = props;
+  const thought = props.thought;
+  const removeThought = props.removeThought;
 
   const handleRemoveClick = () => {
     removeThought(thought.id);
@@ -15,7 +16,7 @@ export function Thought(props) {
   return () => {
     clearTimeout(timeout);
   };
-}, [props.thought]);
+}, [thought]);
 
   return (
     <li className="Thought">
