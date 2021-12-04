@@ -4,6 +4,7 @@ import { Thought } from './Thought';
 import { generateId, getNewExpirationTime } from './utilities';
 
 function App() {
+  //iniatal state settings
   const [thoughts, setThoughts] = useState([
     {
       id: generateId(),
@@ -17,10 +18,12 @@ function App() {
     },
   ]);
 
+  //function to add thought to state
   const addThought = (thought) => {
     setThoughts((prev) => [thought, ...prev]);
   };
 
+  //functoin to remove thought from state
   const removeThought = (thoughtIdToRemove) => {
     setThoughts((thoughts) => thoughts.filter((item) => item.id !== thoughtIdToRemove));
   };

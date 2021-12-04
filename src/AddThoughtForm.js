@@ -4,10 +4,13 @@ import { generateId, getNewExpirationTime } from './utilities';
 export function AddThoughtForm(props) {
   const [text, setText] = useState('');
 
+  //function to set state to what is typed in the inputfield 
   const handleTextChange = (event) => {
     setText(event.target.value);
   };
 
+  //make object with an id, the text from state and expirationtime()
+  //pass the object to addThought function(app.js)
   const handleSubmit = (event) => {
     event.preventDefault();
     if (text.length !== 0) {
